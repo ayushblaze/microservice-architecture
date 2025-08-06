@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ comments }) => {
+const CommentList = ({ comments }) => {
   // ! No longer necessary since we implemented query microservice, which gets 
   // ! all the posts and the comments associated with them in one single call
   // const [comments, setComments] = useState([]);
@@ -16,9 +16,9 @@ export default ({ comments }) => {
   const renderedComment = comments ? (
     comments.map((comment) => {
       let content;
-      if (comment.status == 'approved') content = comment.content;
-      if (comment.status == 'pending') content = 'This comment is awaiting moderation :)';
-      if (comment.status == 'rejected') content = 'This comment has been rejected :(';
+      if (comment.status === 'approved') content = comment.content;
+      if (comment.status === 'pending') content = 'This comment is awaiting moderation :)';
+      if (comment.status === 'rejected') content = 'This comment has been rejected :(';
       return <li key={comment.id}>{content}</li>;
     })
   ) : (
@@ -31,3 +31,5 @@ export default ({ comments }) => {
     </ul>
   )
 };
+
+export default CommentList;
