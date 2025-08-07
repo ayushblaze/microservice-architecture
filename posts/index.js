@@ -40,6 +40,6 @@ app.post('/events', (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log("v20");
+  console.log("v2");
   console.log(chalk.bgGreen.white.bold('Server listening on PORT 4000'));                             
 });
